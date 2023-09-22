@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.goclever.math">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+        android:name="com.goclever.multidex"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/app_id"/>
+        <receiver android:name="com.goclever.math.receiver.AlarmReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.goclever.math.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+
+        <activity
+            android:name="com.goclever.math.ui.MainActivity"
+            android:theme="@style/FullScreenWindow"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.goclever.math.ui.WorkSheetActivity"
+            android:theme="@style/FullScreenWindow"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.ActivityDailyTest"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.DailyQuizActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.SetActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.LevelActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.QuizActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.FractionActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.MixedLevelActivity"
+            android:theme="@style/FullScreenWindow" />
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.MixedQuizActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.MixedScoreActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.ScoreActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.ReviewAnswerActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.ActivityRemider"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:exported="false"
+            android:name="com.goclever.math.ui.AllPdfActivity"
+            android:theme="@style/FullScreenWindow" />
+    </application>
+
+</manifest>
